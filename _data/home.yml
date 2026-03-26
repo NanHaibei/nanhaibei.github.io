@@ -1,0 +1,117 @@
+hero:
+  eyebrow: Hello, I'm
+  name: Yuzhi Jiang
+  bio: >-
+    I am deeply passionate about intelligent robotics, with a long-term vision of building
+    truly agile, reliable, and intelligent robots that can free people from heavy and repetitive labor.
+    My research focuses on learning-based motion control and manipulation for humanoid and quadruped robots.
+
+    Welcome collaboration and discussion.
+  image: /assets/img/avatar.jpg
+
+internships:
+  - company: Hubei Qiling Robotics
+    logo: /assets/img/hust_icon.png
+    role: Motion Control Algorithm Engineer
+    location: Wuhan, China
+    period: Apr 2024 - Present
+    details:
+      - Responsible for imitation learning, RL policy training, and deployment for self-developed humanoid "Shennong" and quadruped "Chitu" robots.
+      - Built a locomotion control training framework based on Isaac Lab, with modular implementation of AMP, Periodic Gait, and VAE algorithms.
+      - Developed a universal MuJoCo Sim2Sim framework based on ROS2 using factory patterns and state machines for rapid policy validation.
+      - Conducted extensive Sim-to-Real deployment on physical robots, directly addressing algorithm, structural, and hardware challenges.
+
+  - company: Hangzhou Leapmotor Technology
+    logo: /assets/img/logos/company-2.png
+    role: Algorithm Intern
+    location: Hangzhou, China
+    period: Oct 2023 - Apr 2024
+    details:
+      - Contributed to the development of the robot's low-level real-time control system, assisting with EtherCAT bus SDK integration based on Acontis and IgH.
+      - Participated in physical prototype hardware integration, real-world testing, and control policy performance validation.
+      - Handled cable fabrication, PCB soldering, and ensured safety during the physical testing process.
+
+education:
+  - school: Huazhong University of Science and Technology (HUST)
+    logo: /assets/img/hust_icon.png
+    degree: M.S. in Control Science and Engineering
+    location: Wuhan, China
+    period: Sep 2024 - Present
+    details:
+      - Recommended for admission (exempt from entrance exam).
+      - Research Focus: Learning-based legged robot motion control.
+
+  - school: Huazhong University of Science and Technology (HUST)
+    logo: /assets/img/hust_icon.png
+    degree: B.S. in Artificial Intelligence
+    location: Wuhan, China
+    period: Sep 2020 - Jun 2024
+    details:
+      - Key Coursework: Deep Learning, Pattern Recognition, Optimal Control, Autonomous Intelligent Systems.
+
+awards:
+  - title: Outstanding Graduate
+    issuer: Huazhong University of Science and Technology
+    date: 2024
+
+  - title: First Prize, National Undergraduate Electronic Design Contest
+    issuer: Ministry of Education, China
+    date: 2023
+
+  - title: Third Prize, Hubei Province Electronic Design Contest
+    issuer: Hubei Province
+    date: 2022
+
+  - title: First Prize, University C Programming Contest
+    issuer: Huazhong University of Science and Technology
+    date: 2021
+
+publications:
+  - name: Omnidirectional Humanoid Locomotion on Stairs via Unsafe Stepping Penalty and Sparse LiDAR Elevation Mapping
+    image: /assets/img/projects/project-1.gif
+    authors: "**Yuzhi Jiang**, Yujun Liang, Junhao Li, Han Ding, Lijun Zhu"
+    venue: "Under review at IROS, 2026"
+    description: >-
+      Humanoid robots, characterized by numerous degrees of freedom and a high center of gravity, are inherently unstable. Safe omnidirectional locomotion on stairs requires both omnidirectional terrain perception and reliable foothold selection. Existing methods often rely on forward-facing depth cameras, which create blind zones that restrict omnidirectional mobility. Furthermore, sparse post-contact unsafe stepping penalties lead to low learning efficiency and suboptimal strategies. To realize safe stair-traversal gaits, this paper introduces a single-stage training framework incorporating a dense unsafe stepping penalty that provides continuous feedback as the foot approaches a hazardous placement. To obtain stable and reliable elevation maps, we build a rolling point-cloud mapping system with spatiotemporal confidence decay and a self-protection zone mechanism, producing temporally consistent local maps. These maps are further refined by an Edge-Guided Asymmetric U-Net (EGAU), which mitigates reconstruction distortion caused by sparse LiDAR returns on stair risers. Simulation and real-robot experiments show that the proposed method achieves a near-100\% safe stepping rate on stair terrains in simulation, while maintaining a remarkably high safe stepping rate in real-world deployments. Furthermore, it completes a continuous long-distance walking test on complex outdoor terrains, demonstrating reliable sim-to-real transfer and long-term stability.
+    links:
+      - label: Project
+        url: "#"
+      - label: arXiv
+        url: "https://arxiv.org/abs/2603.07928"
+      - label: Video
+        url: "#"
+      - label: Code
+        url: "#"
+
+projects:
+  - name: Anthropomorphic Gait Control for Humanoid Robots
+    image: /assets/img/projects/project-2.gif
+    description: >-
+      Utilized the Periodic Gait method to plan changes in the support and swing phases of the humanoid biped, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
+    links:
+      - label: Detail
+        url: #
+
+  - name: Reinforcement Learning for Quadruped Robot
+    image: /assets/img/projects/project-1.gif
+    description: >-
+      Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed as a mature, highly reliable product.
+    links:
+      - label: Detail
+        url: #
+
+  - name: Bipedal Wheeled Robot RL Motion Control
+    image: /assets/img/projects/project-2.gif
+    description: >-
+      Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an AE encoder to estimate self-velocity, improving training convergence speed and policy robustness.
+    links:
+      - label: Detail
+        url: #
+
+  - name: Motion Target Control & Tracking System
+    image: /assets/img/projects/project-1.gif
+    description: >-
+      Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact over 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
+    links:
+      - label: Detail
+        url: #

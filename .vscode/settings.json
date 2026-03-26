@@ -26,5 +26,18 @@
   // Run tasks in macOS
   "terminal.integrated.profiles.osx": {
     "zsh": { "path": "/bin/zsh", "args": ["-l", "-i"] }
-  }
+  },
+  "ROS2.distro": "humble",
+  "python.autoComplete.extraPaths": [
+    "/opt/intel/openvino_2022.3.2/python/python3.10",
+    "/opt/intel/openvino_2022.3.2/python/python3",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/intel/openvino_2022.3.2/python/python3.10",
+    "/opt/intel/openvino_2022.3.2/python/python3",
+    "/opt/ros/humble/lib/python3.10/site-packages",
+    "/opt/ros/humble/local/lib/python3.10/dist-packages"
+  ]
 }

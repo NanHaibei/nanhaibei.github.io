@@ -1,4 +1,515 @@
 ---
-layout: home
-# Index page
+layout: page
+permalink: /
 ---
+
+{% assign home = site.data.home %}
+
+<style>
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .homepage-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .homepage-section h2 {
+    margin-bottom: 0;
+    font-size: 1.8rem;
+  }
+
+  .hero-section {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-name {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-bio {
+    font-size: 1.08rem;
+    color: var(--text-muted-color, #6c757d);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%; /* Using 50% for a perfect rounded avatar look */
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    margin-inline: auto;
+    display: block;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .hero-photo img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-links a,
+  .project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    background: transparent;
+  }
+
+  .hero-links a:hover,
+  .project-links a:hover {
+    background: var(--text-color, #2d3748);
+    color: var(--body-bg, #ffffff) !important;
+    border-color: var(--text-color, #2d3748);
+    transform: scale(1.05);
+  }
+
+  [data-mode="dark"] .hero-links a:hover,
+  [data-mode="dark"] .project-links a:hover {
+    background: #e2e8f0;
+    color: #1a202c !important;
+    border-color: #e2e8f0;
+  }
+
+  .entry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .entry-card {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .entry-card,
+  .project-card {
+    border: 1px solid rgba(128, 128, 128, 0.16);
+    border-radius: 20px;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  }
+
+  .entry-card:hover,
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    border-color: rgba(128, 128, 128, 0.3);
+  }
+
+  .award-card {
+    display: block;
+  }
+
+  /* Improved Hero Section aesthetics */
+  .hero-name {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(120deg, var(--text-color, #2d3748) 0%, #667eea 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  [data-mode="dark"] .hero-name {
+    background: linear-gradient(120deg, #f8f9fa 0%, #a3bffa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .entry-logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 18px;
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    background: rgba(128, 128, 128, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .entry-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    padding: 0.8rem;
+  }
+
+  .entry-main {
+    min-width: 0;
+  }
+
+  .entry-header h3,
+  .project-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .entry-subtitle {
+    margin-top: 0.35rem;
+    font-weight: 600;
+    color: var(--text-muted-color, #6c757d);
+  }
+
+  .entry-meta {
+    white-space: nowrap;
+    color: var(--text-muted-color, #6c757d);
+    font-weight: 600;
+  }
+
+  .entry-details,
+  .award-list {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .entry-details li,
+  .award-list li {
+    margin-bottom: 0.5rem;
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .publication-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .publication-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.16);
+    padding-bottom: 2.5rem;
+  }
+  
+  .publication-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .publication-media img {
+    width: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+  }
+
+  .publication-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.35rem;
+    line-height: 1.35;
+  }
+
+  .publication-authors {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .publication-venue {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text-muted-color, #6c757d);
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .publication-links a {
+    color: #0076df;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  .publication-links a:hover {
+    text-decoration: underline;
+  }
+
+  [data-mode="dark"] .publication-links a {
+    color: #4da3ff;
+  }
+
+  .publication-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted-color, #6c757d);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .publication-abstract-label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    display: block;
+    color: var(--text-color, #2d3748);
+  }
+
+  .project-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .project-media img {
+    width: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+    aspect-ratio: 16 / 10;
+    display: block;
+    background: rgba(128, 128, 128, 0.08);
+  }
+
+  .project-content p {
+    margin-top: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .section-note {
+    color: var(--text-muted-color, #6c757d);
+    margin-top: -0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section,
+    .project-card,
+    .publication-card {
+      grid-template-columns: 1fr;
+    }
+
+    .entry-card {
+      grid-template-columns: 1fr;
+    }
+
+    .entry-logo {
+      width: 72px;
+      height: 72px;
+    }
+
+    .hero-photo {
+      order: -1;
+    }
+  }
+</style>
+
+<div class="homepage">
+  <section class="homepage-section hero-section">
+    <div class="hero-copy">
+      <p class="section-note">{{ home.hero.eyebrow }}</p>
+      <h1 class="hero-name">{{ home.hero.name }}</h1>
+      <div class="hero-bio">{{ home.hero.bio | markdownify }}</div>
+
+      {% if home.hero.links %}
+        <div class="hero-links">
+          {% for link in home.hero.links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="hero-photo">
+      <img src="{{ home.hero.image }}" alt="{{ home.hero.name }} photo">
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <h2>Internship</h2>
+    <div class="entry-list">
+      {% for item in home.internships %}
+        <article class="entry-card">
+          <div class="entry-logo">
+            {% if item.logo %}
+              <img src="{{ item.logo }}" alt="{{ item.company }} logo">
+            {% endif %}
+          </div>
+
+          <div class="entry-main">
+            <div class="entry-header">
+              <div>
+                <h3>{{ item.company }}</h3>
+                <div class="entry-subtitle">{{ item.role }}{% if item.location %} · {{ item.location }}{% endif %}</div>
+              </div>
+              <div class="entry-meta">{{ item.period }}</div>
+            </div>
+
+            {% if item.details %}
+              <ul class="entry-details">
+                {% for detail in item.details %}
+                  <li>{{ detail }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <h2>Education</h2>
+    <div class="entry-list">
+      {% for item in home.education %}
+        <article class="entry-card">
+          <div class="entry-logo">
+            {% if item.logo %}
+              <img src="{{ item.logo }}" alt="{{ item.school }} logo">
+            {% endif %}
+          </div>
+
+          <div class="entry-main">
+            <div class="entry-header">
+              <div>
+                <h3>{{ item.school }}</h3>
+                <div class="entry-subtitle">{{ item.degree }}{% if item.location %} · {{ item.location }}{% endif %}</div>
+              </div>
+              <div class="entry-meta">{{ item.period }}</div>
+            </div>
+
+            {% if item.details %}
+              <ul class="entry-details">
+                {% for detail in item.details %}
+                  <li>{{ detail }}</li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <h2>Awards &amp; Honors</h2>
+    <div class="entry-card award-card">
+      <ul class="award-list">
+        {% for award in home.awards %}
+          <li>
+            <strong>{{ award.title }}</strong>
+            {% if award.issuer %} — {{ award.issuer }}{% endif %}
+            {% if award.date %} ({{ award.date }}){% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <h2>Publications</h2>
+    <div class="publication-list">
+      {% for pub in home.publications %}
+        <article class="publication-card">
+          <div class="publication-media">
+            <img src="{{ pub.image }}" alt="{{ pub.name }} preview">
+          </div>
+
+          <div class="publication-content">
+            <h3><a href="{{ pub.links[0].url }}" style="color: inherit; text-decoration: none;">{{ pub.name }}</a></h3>
+            {% if pub.authors %}
+              <div class="publication-authors">{{ pub.authors | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+            {% endif %}
+            {% if pub.venue %}
+              <div class="publication-venue">{{ pub.venue }}</div>
+            {% endif %}
+
+            {% if pub.links %}
+              <div class="publication-links">
+                {% for link in pub.links %}
+                  <a href="{{ link.url }}">{{ link.label }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if pub.description %}
+              <div class="publication-desc">
+                <span class="publication-abstract-label">Abstract</span>
+                {{ pub.description }}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <h2>Projects</h2>
+    <div class="project-list">
+      {% for project in home.projects %}
+        <article class="project-card">
+          <div class="project-media">
+            <img src="{{ project.image }}" alt="{{ project.name }} preview">
+          </div>
+
+          <div class="project-content">
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.description }}</p>
+
+            {% if project.links %}
+              <div class="project-links">
+                {% for link in project.links %}
+                  <a href="{{ link.url }}">{{ link.label }}</a>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+</div>
