@@ -11,7 +11,7 @@ hero:
 
 internships:
   - company: Hubei Qiling Robotics
-    logo: /assets/img/hust_icon.png
+    logo: /assets/img/qi_logo.png
     role: Motion Control Algorithm Engineer
     location: Wuhan, China
     period: Apr 2024 - Present
@@ -22,7 +22,7 @@ internships:
       - Conducted extensive Sim-to-Real deployment on physical robots, directly addressing algorithm, structural, and hardware challenges.
 
   - company: Hangzhou Leapmotor Technology
-    logo: /assets/img/logos/company-2.png
+    # logo: /assets/img/logos/company-2.png
     role: Algorithm Intern
     location: Hangzhou, China
     period: Oct 2023 - Apr 2024
@@ -68,11 +68,11 @@ awards:
 
 publications:
   - name: Omnidirectional Humanoid Locomotion on Stairs via Unsafe Stepping Penalty and Sparse LiDAR Elevation Mapping
-    image: /assets/img/projects/project-1.gif
+    # image: /assets/img/projects/project-1.gif
     authors: "**Yuzhi Jiang**, Yujun Liang, Junhao Li, Han Ding, Lijun Zhu"
     venue: "Under review at IROS, 2026"
-    description: >-
-      Humanoid robots, characterized by numerous degrees of freedom and a high center of gravity, are inherently unstable. Safe omnidirectional locomotion on stairs requires both omnidirectional terrain perception and reliable foothold selection. Existing methods often rely on forward-facing depth cameras, which create blind zones that restrict omnidirectional mobility. Furthermore, sparse post-contact unsafe stepping penalties lead to low learning efficiency and suboptimal strategies. To realize safe stair-traversal gaits, this paper introduces a single-stage training framework incorporating a dense unsafe stepping penalty that provides continuous feedback as the foot approaches a hazardous placement. To obtain stable and reliable elevation maps, we build a rolling point-cloud mapping system with spatiotemporal confidence decay and a self-protection zone mechanism, producing temporally consistent local maps. These maps are further refined by an Edge-Guided Asymmetric U-Net (EGAU), which mitigates reconstruction distortion caused by sparse LiDAR returns on stair risers. Simulation and real-robot experiments show that the proposed method achieves a near-100\% safe stepping rate on stair terrains in simulation, while maintaining a remarkably high safe stepping rate in real-world deployments. Furthermore, it completes a continuous long-distance walking test on complex outdoor terrains, demonstrating reliable sim-to-real transfer and long-term stability.
+    # description: >-
+    #   Humanoid robots, characterized by numerous degrees of freedom and a high center of gravity, are inherently unstable. Safe omnidirectional locomotion on stairs requires both omnidirectional terrain perception and reliable foothold selection. Existing methods often rely on forward-facing depth cameras, which create blind zones that restrict omnidirectional mobility. Furthermore, sparse post-contact unsafe stepping penalties lead to low learning efficiency and suboptimal strategies. To realize safe stair-traversal gaits, this paper introduces a single-stage training framework incorporating a dense unsafe stepping penalty that provides continuous feedback as the foot approaches a hazardous placement. To obtain stable and reliable elevation maps, we build a rolling point-cloud mapping system with spatiotemporal confidence decay and a self-protection zone mechanism, producing temporally consistent local maps. These maps are further refined by an Edge-Guided Asymmetric U-Net (EGAU), which mitigates reconstruction distortion caused by sparse LiDAR returns on stair risers. Simulation and real-robot experiments show that the proposed method achieves a near-100\% safe stepping rate on stair terrains in simulation, while maintaining a remarkably high safe stepping rate in real-world deployments. Furthermore, it completes a continuous long-distance walking test on complex outdoor terrains, demonstrating reliable sim-to-real transfer and long-term stability.
     links:
       - label: Project
         url: "#"
@@ -83,9 +83,25 @@ publications:
       - label: Code
         url: "#"
 
+  - name: A Gait Driven Reinforcement Learning Framework for Humanoid Robots
+    # image: /assets/img/projects/project-2.gif
+    authors: "Bolin Li, **Yuzhi Jiang**, Linwei Sun, Xuecong Huang, Lijun Zhu, Han Ding"
+    venue: "Under review at IEEE Transactions on Neural Networks and Learning Systems (TNNLS)"
+    # description: >-
+    #   This paper presents a real-time gait driven training framework for humanoid robots. First, we introduce a novel gait planner that incorporates dynamics to design the desired joint trajectory. In the gait design process, the 3D robot model is decoupled into two 2D models, which are then approximated as hybrid inverted pendulums (H-LIP) for trajectory planning. The gait planner operates in parallel in real time within the robot's learning environment. Second, based on this gait planner, we design three effective reward functions within a reinforcement learning framework, forming a reward composition to achieve periodic bipedal gait. This reward composition reduces the robot's learning time and enhances locomotion performance. Finally, a gait design example, along with simulation and experimental comparisons, is presented to demonstrate the effectiveness of the proposed method.
+    links:
+      - label: Project
+        url: "#"
+      - label: arXiv
+        url: "#"
+      - label: Video
+        url: "#"
+      - label: Code
+        url: "#"
+
 projects:
   - name: Anthropomorphic Gait Control for Humanoid Robots
-    image: /assets/img/projects/project-2.gif
+    # image: /assets/img/projects/project-2.gif
     description: >-
       Utilized the Periodic Gait method to plan changes in the support and swing phases of the humanoid biped, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
     links:
@@ -93,7 +109,7 @@ projects:
         url: #
 
   - name: Reinforcement Learning for Quadruped Robot
-    image: /assets/img/projects/project-1.gif
+    # image: /assets/img/projects/project-1.gif
     description: >-
       Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed as a mature, highly reliable product.
     links:
@@ -101,7 +117,7 @@ projects:
         url: #
 
   - name: Bipedal Wheeled Robot RL Motion Control
-    image: /assets/img/projects/project-2.gif
+    # image: /assets/img/projects/project-2.gif
     description: >-
       Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an AE encoder to estimate self-velocity, improving training convergence speed and policy robustness.
     links:
@@ -109,7 +125,7 @@ projects:
         url: #
 
   - name: Motion Target Control & Tracking System
-    image: /assets/img/projects/project-1.gif
+    # image: /assets/img/projects/project-1.gif
     description: >-
       Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact over 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
     links:
