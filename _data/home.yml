@@ -106,7 +106,7 @@ projects:
       Utilized the Periodic Gait method to plan changes in the support and swing phases of the humanoid biped, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
     links:
       - label: Detail
-        url: #
+        url: "#"
 
   - name: Reinforcement Learning for Quadruped Robot
     image: /assets/img/chitu_walk.gif
@@ -114,7 +114,7 @@ projects:
       Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed as a mature, highly reliable product.
     links:
       - label: Detail
-        url: #
+        url: "#"
 
   - name: Bipedal Wheeled Robot RL Motion Control
     image: /assets/img/lunzu.png
@@ -122,7 +122,7 @@ projects:
       Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an AE encoder to estimate self-velocity, improving training convergence speed and policy robustness.
     links:
       - label: Detail
-        url: #
+        url: "#"
 
   - name: Motion Target Control & Tracking System
     image: /assets/img/diansai.jpeg
@@ -130,4 +130,4 @@ projects:
       Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact over 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
     links:
       - label: Detail
-        url: #
+        url: "#"
