@@ -6,8 +6,8 @@ hero:
     truly agile, reliable, and intelligent robots that can free people from heavy and repetitive labor.
     My research focuses on learning-based motion control and manipulation for humanoid and quadruped robots.
 
-    Welcome collaboration and discussion.
-  image: /assets/img/avatar.jpg
+    I welcome collaborations and discussions.
+  image: /assets/img/avatar2.jpg
 
 internships:
   - company: Hubei Qiling Robotics
@@ -16,7 +16,7 @@ internships:
     location: Wuhan, China
     period: Apr 2024 - Present
     details:
-      - Responsible for imitation learning, RL policy training, and deployment for self-developed humanoid "Shennong" and quadruped "Chitu" robots.
+      - Responsible for imitation learning, RL policy training, and deployment for the self-developed humanoid robot "Shennong" and quadruped robot "Chitu".
       - Built a locomotion control training framework based on Isaac Lab, with modular implementation of AMP, Periodic Gait, and VAE algorithms.
       - Developed a universal MuJoCo Sim2Sim framework based on ROS2 using factory patterns and state machines for rapid policy validation.
       - Conducted extensive Sim-to-Real deployment on physical robots, directly addressing algorithm, structural, and hardware challenges.
@@ -39,7 +39,7 @@ education:
     period: Sep 2024 - Present
     details:
       - Recommended for admission (exempt from entrance exam).
-      - Research Focus: Learning-based legged robot motion control.
+      - "Research Focus: Learning-based legged robot motion control."
 
   - school: Huazhong University of Science and Technology (HUST)
     logo: /assets/img/hust_icon.png
@@ -47,7 +47,7 @@ education:
     location: Wuhan, China
     period: Sep 2020 - Jun 2024
     details:
-      - Key Coursework: Deep Learning, Pattern Recognition, Optimal Control, Autonomous Intelligent Systems.
+      - "Key Coursework: Deep Learning, Pattern Recognition, Optimal Control, Autonomous Intelligent Systems."
 
 awards:
   - title: Outstanding Graduate
@@ -103,15 +103,15 @@ projects:
   - name: Anthropomorphic Gait Control for Humanoid Robots
     image: /assets/img/shennong_walk.gif
     description: >-
-      Utilized the Periodic Gait method to plan changes in the support and swing phases of the humanoid biped, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
+      Utilized the Periodic Gait method to plan changes in the support and swing phases of the bipedal humanoid, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
     links:
       - label: Detail
         url: "#"
 
-  - name: Reinforcement Learning for Quadruped Robot
+  - name: Reinforcement Learning for a Quadruped Robot
     image: /assets/img/chitu_walk.gif
     description: >-
-      Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed as a mature, highly reliable product.
+      Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed on a mature, highly reliable commercial product.
     links:
       - label: Detail
         url: "#"
@@ -119,7 +119,7 @@ projects:
   - name: Bipedal Wheeled Robot RL Motion Control
     image: /assets/img/lunzu.png
     description: >-
-      Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an AE encoder to estimate self-velocity, improving training convergence speed and policy robustness.
+      Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an Autoencoder (AE) to estimate self-velocity, improving training convergence speed and policy robustness.
     links:
       - label: Detail
         url: "#"
@@ -127,7 +127,7 @@ projects:
   - name: Motion Target Control & Tracking System
     image: /assets/img/diansai.jpeg
     description: >-
-      Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact over 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
+      Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact after 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
     links:
       - label: Detail
         url: "#"
