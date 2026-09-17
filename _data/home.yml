@@ -2,34 +2,47 @@ hero:
   eyebrow: Hello, I'm
   name: Yuzhi Jiang
   bio: >-
-    I am deeply passionate about intelligent robotics, with a long-term vision of building
-    truly agile, reliable, and intelligent robots that can free people from heavy and repetitive labor.
-    My research focuses on learning-based motion control and manipulation for humanoid and quadruped robots.
+    I am a master's student in Control Science and Engineering at Huazhong University of
+    Science and Technology. I work on learning-based motion control for humanoid and
+    quadrupedal robots, from reinforcement learning and whole-body control to real-robot
+    deployment. My recent work includes compliant whole-body control at XPENG Robotics
+    and omnidirectional stair locomotion on the Unitree G1.
 
-    I welcome collaborations and discussions.
+    I welcome research collaborations and discussions.
   image: /assets/img/avatar2.jpg
+  links:
+    - label: Email me
+      url: mailto:m202473708@hust.edu.cn
+    - label: GitHub
+      url: https://github.com/NanHaibei
 
 internships:
+  - company: XPENG Robotics
+    logo: /assets/img/xpeng-logo.png
+    role: Embodied AI Algorithm Intern
+    location: China
+    period: Jun 2026 - Aug 2026
+    details:
+      - Reproduced the compliant CHIP whole-body controller based on NVIDIA SONIC and deployed CHIP and GentleHumanoid on Unitree G1 and XPENG IRON.
+      - Integrated SONIC with GR00T across teleoperation, data collection, fine-tuning, and real-robot deployment, connecting VLA planning with low-level whole-body control for loco-manipulation tasks.
+      - Used LIMMT for motion-data selection and PAE latent representations with interpolation to broaden the whole-body-control training distribution.
+
   - company: Hubei Qiling Robotics
     logo: /assets/img/qi_logo.png
-    role: Motion Control Algorithm Engineer
+    role: Motion Control Algorithm Intern
     location: Wuhan, China
-    period: Apr 2024 - Present
+    period: Apr 2024 - May 2026
     details:
-      - Responsible for imitation learning, RL policy training, and deployment for the self-developed humanoid robot "Shennong" and quadruped robot "Chitu".
-      - Built a locomotion control training framework based on Isaac Lab, with modular implementation of AMP, Periodic Gait, and VAE algorithms.
-      - Developed a universal MuJoCo Sim2Sim framework based on ROS2 using factory patterns and state machines for rapid policy validation.
-      - Conducted extensive Sim-to-Real deployment on physical robots, directly addressing algorithm, structural, and hardware challenges.
+      - Trained and deployed imitation-learning and reinforcement-learning locomotion policies for the "Shennong" humanoid and "Chitu" quadruped.
+      - Built an Isaac Lab training framework with modular AMP, Periodic Gait, and VAE components.
+      - Developed ROS2-based MuJoCo Sim2Sim and policy-deployment frameworks using state machines for rapid validation on different robots.
 
-  - company: Hangzhou Leapmotor Technology
-    # logo: /assets/img/logos/company-2.png
+  - company: Hangzhou Lingwen Technology
     role: Algorithm Intern
     location: Hangzhou, China
     period: Oct 2023 - Apr 2024
     details:
-      - Contributed to the development of the robot's low-level real-time control system, assisting with EtherCAT bus SDK integration based on Acontis and IgH.
-      - Participated in physical prototype hardware integration, real-world testing, and control policy performance validation.
-      - Handled cable fabrication, PCB soldering, and ensured safety during the physical testing process.
+      - Contributed to EtherCAT bus SDK integration with Acontis and IgH, servo-motor communication tests, robot prototype integration, and physical testing.
 
 education:
   - school: Huazhong University of Science and Technology (HUST)
@@ -39,7 +52,7 @@ education:
     period: Sep 2024 - Present
     details:
       - Recommended for admission (exempt from entrance exam).
-      - "Research Focus: Learning-based legged robot motion control."
+      - "Research focus: Learning-based legged robot motion control."
 
   - school: Huazhong University of Science and Technology (HUST)
     logo: /assets/img/hust_icon.png
@@ -47,20 +60,18 @@ education:
     location: Wuhan, China
     period: Sep 2020 - Jun 2024
     details:
-      - "Key Coursework: Deep Learning, Pattern Recognition, Optimal Control, Autonomous Intelligent Systems."
+      - "Key coursework: Deep Learning, Pattern Recognition, Optimal Control, Autonomous Intelligent Systems."
 
 awards:
+  - title: 4th place, 2026 ATEC Challenge online competition
+    date: 2026
+
   - title: Outstanding Graduate
     issuer: Huazhong University of Science and Technology
     date: 2024
 
   - title: First Prize, National Undergraduate Electronic Design Contest
-    issuer: Ministry of Education, China
     date: 2023
-
-  - title: Third Prize, Hubei Province Electronic Design Contest
-    issuer: Hubei Province
-    date: 2022
 
   - title: First Prize, University C Programming Contest
     issuer: Huazhong University of Science and Technology
@@ -70,64 +81,77 @@ publications:
   - name: Omnidirectional Humanoid Locomotion on Stairs via Unsafe Stepping Penalty and Sparse LiDAR Elevation Mapping
     image: /assets/img/IROS2026.gif
     authors: "**Yuzhi Jiang**, Yujun Liang, Junhao Li, Han Ding, Lijun Zhu"
-    venue: "Under review at IROS, 2026"
-    # description: >-
-    #   Humanoid robots, characterized by numerous degrees of freedom and a high center of gravity, are inherently unstable. Safe omnidirectional locomotion on stairs requires both omnidirectional terrain perception and reliable foothold selection. Existing methods often rely on forward-facing depth cameras, which create blind zones that restrict omnidirectional mobility. Furthermore, sparse post-contact unsafe stepping penalties lead to low learning efficiency and suboptimal strategies. To realize safe stair-traversal gaits, this paper introduces a single-stage training framework incorporating a dense unsafe stepping penalty that provides continuous feedback as the foot approaches a hazardous placement. To obtain stable and reliable elevation maps, we build a rolling point-cloud mapping system with spatiotemporal confidence decay and a self-protection zone mechanism, producing temporally consistent local maps. These maps are further refined by an Edge-Guided Asymmetric U-Net (EGAU), which mitigates reconstruction distortion caused by sparse LiDAR returns on stair risers. Simulation and real-robot experiments show that the proposed method achieves a near-100\% safe stepping rate on stair terrains in simulation, while maintaining a remarkably high safe stepping rate in real-world deployments. Furthermore, it completes a continuous long-distance walking test on complex outdoor terrains, demonstrating reliable sim-to-real transfer and long-term stability.
+    venue: "arXiv preprint, 2026; submitted to IROS 2026"
     links:
-      - label: Project
-        url: "#"
       - label: arXiv
-        url: "https://arxiv.org/abs/2603.07928"
-      - label: Video
-        url: "#"
-      - label: Code
-        url: "#"
+        url: https://arxiv.org/abs/2603.07928
 
   - name: A Gait Driven Reinforcement Learning Framework for Humanoid Robots
     image: /assets/img/bolin.gif
     authors: "Bolin Li, **Yuzhi Jiang**, Linwei Sun, Xuecong Huang, Lijun Zhu, Han Ding"
-    venue: "Under review at IEEE Transactions on Neural Networks and Learning Systems (TNNLS)"
-    # description: >-
-    #   This paper presents a real-time gait driven training framework for humanoid robots. First, we introduce a novel gait planner that incorporates dynamics to design the desired joint trajectory. In the gait design process, the 3D robot model is decoupled into two 2D models, which are then approximated as hybrid inverted pendulums (H-LIP) for trajectory planning. The gait planner operates in parallel in real time within the robot's learning environment. Second, based on this gait planner, we design three effective reward functions within a reinforcement learning framework, forming a reward composition to achieve periodic bipedal gait. This reward composition reduces the robot's learning time and enhances locomotion performance. Finally, a gait design example, along with simulation and experimental comparisons, is presented to demonstrate the effectiveness of the proposed method.
+    venue: "arXiv preprint; submitted to IEEE TNNLS"
     links:
-      - label: Project
-        url: "#"
       - label: arXiv
-        url: "#"
-      - label: Video
-        url: "#"
-      - label: Code
-        url: "#"
+        url: https://arxiv.org/abs/2506.08416
+
+  - name: Deep Reinforcement Learning for Real-World Humanoid Robot Locomotion Control with Automatic Reward Learning
+    authors: "Renzhi Lu, Jie Wang, Zonghe Shao, Ruijuan Chen, Lijun Zhu, **Yuzhi Jiang**, Yunyi Pang, Dongfang Liang, Yang Shi, Han Ding"
+    venue: "Research, vol. 9, article 1123, 2026"
+    links:
+      - label: DOI
+        url: https://doi.org/10.34133/research.1123
+
+  - name: "AMPD: Adaptive Motion Planning Diffusion for Robot Motion Planning in Complex Environments"
+    authors: "Xiangxi Chen, **Yuzhi Jiang**, Renzhi Lu"
+    venue: "IEEE Transactions on Consumer Electronics, 2026"
+    links:
+      - label: DOI
+        url: https://doi.org/10.1109/TCE.2026.3673342
 
 projects:
-  - name: Anthropomorphic Gait Control for Humanoid Robots
+  - name: Compliant Whole-Body Control for Humanoid Robots
+    period: Jun 2026 - Aug 2026
+    description: >-
+      Reproduced CHIP on top of NVIDIA SONIC and built automated compliance tests in
+      MuJoCo. Deployed CHIP and GentleHumanoid on Unitree G1 and XPENG IRON, enabling
+      adjustable arm compliance while tracking a reference motion. Tested physical
+      interaction in handshake and blackboard-wiping tasks.
+
+  - name: Omnidirectional Humanoid Stair Locomotion
+    period: Oct 2025 - Mar 2026
+    image: /assets/img/IROS2026.gif
+    description: >-
+      Developed a single-stage perceptive locomotion policy with dense unsafe-stepping
+      penalties and a LiDAR elevation-map pipeline with spatiotemporal confidence decay
+      and an edge-guided U-Net. Deployed zero-shot on Unitree G1. The system achieved a
+      near-100% safe-stepping rate in simulation and completed a continuous 400 m outdoor
+      test over complex terrain.
+    links:
+      - label: Paper
+        url: https://arxiv.org/abs/2603.07928
+
+  - name: Humanoid and Quadruped Reinforcement Learning Control
+    period: Apr 2024 - May 2026
     image: /assets/img/shennong_walk.gif
     description: >-
-      Utilized the Periodic Gait method to plan changes in the support and swing phases of the bipedal humanoid, constraining upper limb cooperative swaying with a sinusoidal trajectory. Filtered high-quality human walking data from the AMASS dataset, applied GMR for motion retargeting, and trained natural, fluid human-like walking policies via AMP. Deployed on the self-developed "Shennong" humanoid robot, successfully demonstrating robust walking under disturbances at the 2025 Hubei New Year Conference.
-    links:
-      - label: Detail
-        url: "#"
-
-  - name: Reinforcement Learning for a Quadruped Robot
-    image: /assets/img/chitu_walk.gif
-    description: >-
-      Designed reward functions using the Periodic Gait method, successfully training highly robust quadrupedal walking policies adaptable to various complex terrains. Independently designed and developed the core state machine control framework, precisely managing multiple behavioral states (e.g., lying down, standing up, damping, RL control) with smooth transitions, significantly enhancing system safety and control experience. Deployed on a mature, highly reliable commercial product.
-    links:
-      - label: Detail
-        url: "#"
+      Used Periodic Gait, AMASS motion retargeting, AMP, and AE/VAE state estimation to
+      train robust humanoid walking. Built a state-machine control framework and
+      terrain-adaptive locomotion policies for a quadruped. Deployed the policies on
+      Qiling Robotics' "Shennong" humanoid and "Chitu" quadruped.
 
   - name: Bipedal Wheeled Robot RL Motion Control
+    period: Jun 2024
     image: /assets/img/lunzu.png
     description: >-
-      Undergraduate thesis project. Exported the URDF file of a self-developed bipedal wheeled robot from SolidWorks and trained the RL locomotion policy in Isaac Gym. Achieved stable velocity tracking capabilities, capable of traversing complex terrains and resisting human disturbances. Utilized an Autoencoder (AE) to estimate self-velocity, improving training convergence speed and policy robustness.
-    links:
-      - label: Detail
-        url: "#"
+      Undergraduate thesis project. Exported a self-developed robot model from
+      SolidWorks to URDF and trained locomotion policies in Isaac Gym with Legged Gym.
+      Achieved velocity tracking, terrain traversal, and resistance to disturbances,
+      using an autoencoder to estimate velocity.
 
-  - name: Motion Target Control & Tracking System
+  - name: Motion Target Control and Tracking System
+    period: 2023
     image: /assets/img/diansai.jpeg
     description: >-
-      Designed and fabricated a 2D gimbal system with a compact, high-strength mechanical structure that remained intact after 860km of transportation. Used C/C++ to program the STM32, stably implementing stepper motor position loop control, precise laser shooting, interactive OLED, and real-time motion pause/resume. Won the First Prize in the 2023 National Undergraduate Electronic Design Contest.
-    links:
-      - label: Detail
-        url: "#"
+      Built the two-axis gimbal and STM32 control software for an autonomous target
+      tracking system. The team won First Prize in the 2023 National Undergraduate
+      Electronic Design Contest.
