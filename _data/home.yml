@@ -116,9 +116,10 @@ projects:
       MuJoCo. Deployed CHIP and GentleHumanoid on Unitree G1 and XPENG IRON, enabling
       adjustable arm compliance while tracking a reference motion. Tested physical
       interaction in handshake and blackboard-wiping tasks.
-    video: /assets/video/g1-compliance.mp4
-    poster: /assets/video/g1-compliance.jpg
-    video_caption: Unitree G1 — compliant arm response
+    image: /assets/img/g1-compliance.gif
+    image_style: portrait
+    image_alt: Unitree G1 responding to a person moving its arm
+    image_caption: Unitree G1 — compliant arm response
 
   - name: Omnidirectional Humanoid Stair Locomotion
     period: Oct 2025 - Mar 2026

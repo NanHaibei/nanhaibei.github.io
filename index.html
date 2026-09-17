@@ -315,17 +315,14 @@ permalink: /
     background: rgba(128, 128, 128, 0.08);
   }
 
-  .project-media video {
-    display: block;
+  .project-media--portrait img {
     width: min(100%, 250px);
-    aspect-ratio: 9 / 16;
+    aspect-ratio: 224 / 396;
     object-fit: contain;
-    background: #111;
-    border-radius: 16px;
     margin-inline: auto;
   }
 
-  .project-video-caption {
+  .project-image-caption {
     color: var(--text-muted-color, #6c757d);
     font-size: 0.9rem;
     text-align: center;
@@ -524,18 +521,11 @@ permalink: /
     <h2>Projects</h2>
     <div class="project-list">
       {% for project in home.projects %}
-        <article class="project-card{% unless project.image or project.video %} project-card--text{% endunless %}">
-          {% if project.video %}
-            <div class="project-media">
-              <video controls playsinline preload="none" poster="{{ project.poster }}" aria-label="{{ project.video_caption }}">
-                <source src="{{ project.video }}" type="video/mp4">
-                Your browser does not support embedded video.
-              </video>
-              <p class="project-video-caption">{{ project.video_caption }}</p>
-            </div>
-          {% elsif project.image %}
-            <div class="project-media">
-              <img src="{{ project.image }}" alt="{{ project.name }} preview" loading="lazy">
+        <article class="project-card{% unless project.image %} project-card--text{% endunless %}">
+          {% if project.image %}
+            <div class="project-media{% if project.image_style == 'portrait' %} project-media--portrait{% endif %}">
+              <img src="{{ project.image }}" alt="{{ project.image_alt | default: project.name }}" loading="lazy">
+              {% if project.image_caption %}<p class="project-image-caption">{{ project.image_caption }}</p>{% endif %}
             </div>
           {% endif %}
 
