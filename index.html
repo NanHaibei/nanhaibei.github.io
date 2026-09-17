@@ -315,6 +315,23 @@ permalink: /
     background: rgba(128, 128, 128, 0.08);
   }
 
+  .project-media video {
+    display: block;
+    width: min(100%, 250px);
+    aspect-ratio: 9 / 16;
+    object-fit: contain;
+    background: #111;
+    border-radius: 16px;
+    margin-inline: auto;
+  }
+
+  .project-video-caption {
+    color: var(--text-muted-color, #6c757d);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0.5rem 0 0;
+  }
+
   .project-content p {
     margin-top: 0.75rem;
     margin-bottom: 1rem;
@@ -325,6 +342,7 @@ permalink: /
     font-size: 0.95rem;
     margin-top: 0.25rem;
   }
+
 
   .project-links {
     display: flex;
@@ -356,6 +374,7 @@ permalink: /
     .hero-photo {
       order: -1;
     }
+
   }
 </style>
 
@@ -505,8 +524,16 @@ permalink: /
     <h2>Projects</h2>
     <div class="project-list">
       {% for project in home.projects %}
-        <article class="project-card{% unless project.image %} project-card--text{% endunless %}">
-          {% if project.image %}
+        <article class="project-card{% unless project.image or project.video %} project-card--text{% endunless %}">
+          {% if project.video %}
+            <div class="project-media">
+              <video controls playsinline preload="none" poster="{{ project.poster }}" aria-label="{{ project.video_caption }}">
+                <source src="{{ project.video }}" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <p class="project-video-caption">{{ project.video_caption }}</p>
+            </div>
+          {% elsif project.image %}
             <div class="project-media">
               <img src="{{ project.image }}" alt="{{ project.name }} preview" loading="lazy">
             </div>
